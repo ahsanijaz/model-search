@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* Global Font & Background */
+html, body, [class*="css"] {
+    font-family: 'Outfit', sans-serif !important;
+}
+
+/* Hide Streamlit Defaults */
+#MainMenu {visibility: hidden !important;}
+footer {visibility: hidden !important;}
+header[data-testid="stHeader"] {visibility: hidden !important; height: 0px !important;}
+
+[data-testid="stAppViewContainer"] {
+    background: radial-gradient(circle at top right, #1a1a24, #0d0d14) !important;
+    color: #e2e8f0 !important;
+}
+
+[data-testid="stHeader"] {
+    background: transparent !important;
+}
+
+/* Sidebar Glassmorphism */
+[data-testid="stSidebar"] {
+    background: rgba(20, 20, 30, 0.6) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-testid="stSidebar"] * {
+    color: #cbd5e1 !important;
+}
+
+/* Chat Input Glassmorphism */
+[data-testid="stChatInput"] {
+    background: rgba(30, 30, 45, 0.7) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-testid="stChatInput"] textarea {
+    color: white !important;
+}
+
+/* User Message Bubbles */
+[data-testid="chatAvatarIcon-user"] {
+    background-color: #3b82f6 !important;
+}
+
+[data-testid="stChatMessage"] {
+    background-color: transparent !important;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Subtle glow for Assistant messages */
+[data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-assistant"]) {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border-left: 2px solid #8b5cf6 !important;
+}
+
+/* Primary Button with animated gradient */
+button[data-testid="baseButton-primary"] {
+    background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899) !important;
+    border: none !important;
+    color: white !important;
+    border-radius: 12px !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+button[data-testid="baseButton-primary"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 20px rgba(168, 85, 247, 0.4) !important;
+}
+
+/* Secondary Buttons */
+button[data-testid="baseButton-secondary"] {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #e2e8f0 !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+}
+
+button[data-testid="baseButton-secondary"]:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Dataframe Styling for Dark Mode */
+[data-testid="stDataFrame"] {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Model Cards Hover Effects */
+[data-testid="stVerticalBlock"] > [data-testid="stVerticalBlock"] > [data-testid="stVerticalBlock"] {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-testid="stVerticalBlock"] > [data-testid="stVerticalBlock"] > [data-testid="stVerticalBlock"]:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(139, 92, 246, 0.15);
+}
+
+/* Status / Spinner text */
+[data-testid="stStatusWidget"] {
+    background: rgba(30, 30, 40, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Metrics */
+[data-testid="stMetricValue"] {
+    font-weight: 700 !important;
+    color: #ffffff !important;
+}
+[data-testid="stMetricLabel"] {
+    color: #94a3b8 !important;
+}
+
+/* Metric container background */
+[data-testid="metric-container"] {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border-radius: 8px !important;
+    padding: 8px 10px !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    margin-bottom: 4px !important;
+}
+
+/* Tabs */
+[data-testid="stTabs"] [data-baseweb="tab-list"] {
+    gap: 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-testid="stTabs"] [data-baseweb="tab"] {
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    border-radius: 8px 8px 0 0 !important;
+}
+
+/* Expander */
+[data-testid="stExpander"] {
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 10px !important;
+    background: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Download button */
+[data-testid="stDownloadButton"] > button {
+    background: rgba(99, 102, 241, 0.2) !important;
+    border: 1px solid rgba(99, 102, 241, 0.4) !important;
+    color: #a5b4fc !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-size: 0.82rem !important;
+    transition: all 0.2s ease !important;
+}
+
+[data-testid="stDownloadButton"] > button:hover {
+    background: rgba(99, 102, 241, 0.35) !important;
+    border-color: rgba(99, 102, 241, 0.7) !important;
+    color: white !important;
+}
+
+/* Success alert (winner banner) */
+[data-testid="stAlert"] {
+    border-radius: 10px !important;
+}
+
+/* Divider */
+hr {
+    border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Caption */
+[data-testid="stCaptionContainer"] {
+    opacity: 0.5;
+}
+
